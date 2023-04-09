@@ -96,5 +96,5 @@ public class RutaModelo {
     public void setDiasDisponibles(String diasDisponibles) {
         this.diasDisponibles = diasDisponibles;
     }
-    
+
 }
