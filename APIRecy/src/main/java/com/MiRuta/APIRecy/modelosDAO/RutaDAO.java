@@ -18,11 +18,13 @@ public class RutaDAO implements RutaInterface {
 
 
 
-     //Metodo listar todas las rutas
+    //Metodo listar todas las rutas
     @Override
-    public List<Map<String, Object>> listarRutas() {
-        String sql = "SELECT idRuta, Lugar_Inicio, Lugar_Final, Hora_inicio, Hora_Final, Marcador_Ruta, DiasDispo, Usuario_Correo_Usu, Rutas_idRuta from rutas Left join usuario_has_rutas on (idRuta = Rutas_idRuta)";
-        List<Map<String, Object>> rutaList = template.queryForList(sql);
+    public List<Map<String, Object>> listarRutas(String correoUsuario) {
+        String sql = "SELECT r.*, " +
+                "CASE WHEN uhr.Usuario_Correo_Usu IS NULL THEN 'false' ELSE 'true' END AS es_favorita " +
+                "FROM Rutas r LEFT JOIN Usuario_has_Rutas uhr ON r.idRuta = uhr.Rutas_idRuta AND uhr.Usuario_Correo_Usu = ?";
+        List<Map<String, Object>> rutaList = template.queryForList(sql, correoUsuario);
         return rutaList;
     }
 

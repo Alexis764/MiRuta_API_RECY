@@ -22,7 +22,7 @@ public class Usuario_has_rutasDAO implements Usuario_has_rutasInterface {
     //Metodo listar rutas favoritas para un usuario
     @Override
     public List<Map<String, Object>> listarRutasFavoritas(String correoUsuario) {
-        String sql = "SELECT * FROM rutas inner join usuario_has_rutas on (idRuta = Rutas_idRuta) where Usuario_Correo_Usu = ?";
+        String sql = "SELECT rutas.*, 'true' as es_favorita from rutas inner join usuario_has_rutas on (idRuta = Rutas_idRuta) where Usuario_Correo_Usu = ?";
         List<Map<String, Object>> rutaList = template.queryForList(sql, correoUsuario);
         return rutaList;
     }

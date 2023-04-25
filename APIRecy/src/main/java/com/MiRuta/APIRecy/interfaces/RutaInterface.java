@@ -6,6 +6,6 @@ import java.util.Map;
 public interface RutaInterface {
 
     //Metodo listar todas las rutas
-    public List<Map<String, Object>> listarRutas();
+    public List<Map<String, Object>> listarRutas(String correoUsuario);
 
 }

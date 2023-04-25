@@ -20,8 +20,8 @@ public class RutaServicio implements RutaInterface {
 
     //Metodo listar todas las rutas
     @Override
-    public List<Map<String, Object>> listarRutas() {
-        return rutaDAO.listarRutas();
+    public List<Map<String, Object>> listarRutas(String correoUsuario) {
+        return rutaDAO.listarRutas(correoUsuario);
     }
 
 }

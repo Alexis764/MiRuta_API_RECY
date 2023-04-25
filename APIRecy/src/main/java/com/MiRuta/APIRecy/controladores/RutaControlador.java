@@ -4,6 +4,7 @@ import com.MiRuta.APIRecy.servicios.RutaServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +22,9 @@ public class RutaControlador {
 
 
     //Metodo listar todas las rutas
-    @GetMapping("/listar")
-    public List<Map<String, Object>> listarRutasCon() {
-        return rutaServicio.listarRutas();
+    @GetMapping("/listar/{correo}")
+    public List<Map<String, Object>> listarRutasCon(@PathVariable("correo") String correoUsuario) {
+        return rutaServicio.listarRutas(correoUsuario);
     }
 
 }
