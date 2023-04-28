@@ -1,19 +1,30 @@
 package com.MiRuta.APIRecy.modelos;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "parada")
 public class ParadaModelo {
 
     //Atributos
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, length = 3)
     private int idParadas;
 
+    @Column(nullable = false, length = 45)
     private String nombrePara;
+
+    @Column(nullable = false, length = 200)
     private String direccionPara;
+
+    @Column(nullable = false, length = 200)
     private float longitud;
+
+    @Column(nullable = false, length = 200)
     private float latitud;
+
+    @Column(nullable = false, length = 500)
     private String imgParada;
 
 

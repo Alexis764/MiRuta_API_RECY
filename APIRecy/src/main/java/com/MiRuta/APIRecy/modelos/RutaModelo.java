@@ -1,23 +1,40 @@
 package com.MiRuta.APIRecy.modelos;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Time;
+import java.util.*;
+
 
 @Entity
+@Table(name = "ruta")
 public class RutaModelo {
 
     //Atributos
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, length = 3)
     private int idRuta;
 
+    @Column(nullable = false, length = 45)
     private String lugarInicio;
+
+    @Column(nullable = false, length = 45)
     private String lugarFinal;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIME)
     private Time horaInicio;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIME)
     private Time horaFinal;
+
+    @Column(nullable = false)
     private String marcadorRuta;
-    private String diasDisponibles;
+
+    @Column(nullable = false)
+    private Date diasDisponibles;
 
 
 
@@ -25,7 +42,7 @@ public class RutaModelo {
     public RutaModelo() {
     }
 
-    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal, String marcadorRuta, String diasDisponibles) {
+    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal, String marcadorRuta, Date diasDisponibles) {
         this.idRuta = idRuta;
         this.lugarInicio = lugarInicio;
         this.lugarFinal = lugarFinal;
@@ -62,7 +79,7 @@ public class RutaModelo {
         return marcadorRuta;
     }
 
-    public String getDiasDisponibles() {
+    public Date getDiasDisponibles() {
         return diasDisponibles;
     }
 
@@ -93,7 +110,7 @@ public class RutaModelo {
         this.marcadorRuta = marcadorRuta;
     }
 
-    public void setDiasDisponibles(String diasDisponibles) {
+    public void setDiasDisponibles(Date diasDisponibles) {
         this.diasDisponibles = diasDisponibles;
     }
 
