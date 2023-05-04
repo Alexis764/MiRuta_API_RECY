@@ -33,8 +33,8 @@ public class RutaModelo {
     @Column(nullable = false)
     private String marcadorRuta;
 
-    @Column(nullable = false)
-    private Date diasDisponibles;
+    @Column(nullable = false, length = 10)
+    private String diasDisponibles;
 
 
 
@@ -42,7 +42,7 @@ public class RutaModelo {
     public RutaModelo() {
     }
 
-    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal, String marcadorRuta, Date diasDisponibles) {
+    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal, String marcadorRuta, String diasDisponibles) {
         this.idRuta = idRuta;
         this.lugarInicio = lugarInicio;
         this.lugarFinal = lugarFinal;
@@ -79,7 +79,7 @@ public class RutaModelo {
         return marcadorRuta;
     }
 
-    public Date getDiasDisponibles() {
+    public String getDiasDisponibles() {
         return diasDisponibles;
     }
 
@@ -110,7 +110,7 @@ public class RutaModelo {
         this.marcadorRuta = marcadorRuta;
     }
 
-    public void setDiasDisponibles(Date diasDisponibles) {
+    public void setDiasDisponibles(String diasDisponibles) {
         this.diasDisponibles = diasDisponibles;
     }
 
