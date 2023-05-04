@@ -2,40 +2,37 @@ package com.MiRuta.APIRecy.modelos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 @Entity
-@Table(name = "Usuario_has_rutas")
-public class Usuario_has_rutasModelo {
+@Table(name = "Bus_has_rutasModelo")
+public class Bus_has_rutasModelo {
 
-    //Atributos
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "Usuario_idUsu", referencedColumnName = "idUsu", nullable = false)
+    @JoinColumn(name = "Bus_placaBus", referencedColumnName = "placaBus", nullable = false)
     @JsonIgnore
-    private UsuarioModelo idUsu;
+    private BusModelo placaBus;
+
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Ruta_idRuta", referencedColumnName = "idRuta", nullable = false)
     @JsonIgnore
     private RutaModelo idRuta;
 
-
-
-    //Constructores
-    public Usuario_has_rutasModelo() {
-    }
-
-    public Usuario_has_rutasModelo(UsuarioModelo idUsu, RutaModelo idRuta) {
-        this.idUsu = idUsu;
+    public Bus_has_rutasModelo(BusModelo placaBus, RutaModelo idRuta) {
+        this.placaBus = placaBus;
         this.idRuta = idRuta;
     }
 
-    public UsuarioModelo getIdUsu() {
-        return idUsu;
+    public Bus_has_rutasModelo() {
+
     }
 
-    public void setIdUsu(UsuarioModelo idUsu) {
-        this.idUsu = idUsu;
+    public BusModelo getPlacaBus() {
+        return placaBus;
+    }
+
+    public void setPlacaBus(BusModelo placaBus) {
+        this.placaBus = placaBus;
     }
 
     public RutaModelo getIdRuta() {

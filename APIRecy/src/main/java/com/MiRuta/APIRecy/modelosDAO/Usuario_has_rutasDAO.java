@@ -33,7 +33,7 @@ public class Usuario_has_rutasDAO implements Usuario_has_rutasInterface {
     @Override
     public int agregarRutaFavorita(Usuario_has_rutasModelo ruta) {
         String sql = "insert into usuario_has_rutas (Usuario_Correo_Usu, Rutas_idRuta) values (?, ?)";
-        return template.update(sql, ruta.getCorreoUsuario(), ruta.getIdRuta());
+        return template.update(sql, ruta.getIdUsu(), ruta.getIdRuta());
     }
 
 
