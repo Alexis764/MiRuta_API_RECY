@@ -33,7 +33,7 @@ public class RutaModelo {
     @Column(nullable = false)
     private String marcadorRuta;
 
-    @Column(nullable = false, length = 10)
+    @Column(name = "dias_disponible", nullable = false, length = 20)
     private String diasDisponibles;
 
 

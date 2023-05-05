@@ -17,12 +17,13 @@ public class MarcadorModelo {
     private float longitud;
 
     //Contructores
-    public MarcadorModelo() {}
+    public MarcadorModelo() {
+    }
 
     public MarcadorModelo(int idMarcador, String nombreMarcador, int latitud, int longitud) {
         this.idMarcador = idMarcador;
         this.nombreMarcador = nombreMarcador;
-        this.latitud = latitud;
+        latitud = latitud;
         this.longitud = longitud;
     }
 

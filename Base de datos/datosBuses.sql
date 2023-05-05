@@ -56,14 +56,14 @@ insert into usuario (correo_usu,contrasena_usu,nombre_usu,foto_usu) values
 #insert into usuario_has_rutas (Usuario_Correo_Usu, Rutas_idRuta) values ('arturo@gmail.com', 6),('arturo@gmail.com', 3),('arturo@gmail.com', 2);
 
 
-select * from miruta.buses;
-select * from miruta.paradas;
-select * from miruta.rutas;
-select * from miruta.usuario;
-SELECT * FROM miruta.usuario_has_rutas;
+-- select * from miruta.buses;
+-- select * from miruta.paradas;
+-- select * from miruta.rutas;
+-- select * from miruta.usuario;
+-- SELECT * FROM miruta.usuario_has_rutas;
 
 
 
-USE miruta;
+-- USE miruta;
 #select * from rutas Left join usuario_has_rutas on (idRuta = Rutas_idRuta); 
 #select * from rutas inner join usuario_has_rutas on (idRuta = Rutas_idRuta) where Usuario_Correo_Usu = "alexis@gmail.com";
