@@ -12,18 +12,17 @@ public class MarcadorModelo {
     @Column(nullable = false,length = 45)
     private String nombreMarcador;
     @Column(nullable = false, length = 20)
-    private float Latitud;
+    private float latitud;
     @Column(nullable = false, length = 20)
     private float longitud;
 
     //Contructores
-    public MarcadorModelo() {
-    }
+    public MarcadorModelo() {}
 
     public MarcadorModelo(int idMarcador, String nombreMarcador, int latitud, int longitud) {
         this.idMarcador = idMarcador;
         this.nombreMarcador = nombreMarcador;
-        Latitud = latitud;
+        this.latitud = latitud;
         this.longitud = longitud;
     }
 
@@ -37,7 +36,7 @@ public class MarcadorModelo {
     }
 
     public float getLatitud() {
-        return Latitud;
+        return latitud;
     }
 
     public float getLongitud() {
@@ -55,7 +54,7 @@ public class MarcadorModelo {
     }
 
     public void setLatitud(int latitud) {
-        Latitud = latitud;
+        latitud = latitud;
     }
 
     public void setLongitud(int longitud) {

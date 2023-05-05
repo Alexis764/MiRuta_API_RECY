@@ -14,7 +14,7 @@ insert into bus (placa_bus) values
 ('tre543'),
 ('ljk876');
 
-#insert into marcadores(id,nombre,latitud,longitud) values ();
+insert into marcador (nombre_marcador,latitud,longitud) values ("parada1",'4.730178','-74.259490');
 
 insert into parada (id_paradas,nombre_para,direccion_para,latitud,longitud,img_parada) values 
 (1,'PROSPERIDAD','Ciudadela La Prosperidad Cl 7 Madrid Cundinamarca',4.739177,-74.278175,'https://lh5.googleusercontent.com/p/AF1QipO1egW9Vd6HGQD6bE5wdBski-vi9LYDqMRiKALM=w475-h240-k-no'),
