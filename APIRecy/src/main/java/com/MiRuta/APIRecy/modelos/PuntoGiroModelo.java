@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "marcador")
-public class MarcadorModelo {
+public class PuntoGiroModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, length = 3)
@@ -17,10 +17,10 @@ public class MarcadorModelo {
     private float longitud;
 
     //Contructores
-    public MarcadorModelo() {
+    public PuntoGiroModelo() {
     }
 
-    public MarcadorModelo(int idMarcador, String nombreMarcador, int latitud, int longitud) {
+    public PuntoGiroModelo(int idMarcador, String nombreMarcador, int latitud, int longitud) {
         this.idMarcador = idMarcador;
         this.nombreMarcador = nombreMarcador;
         latitud = latitud;

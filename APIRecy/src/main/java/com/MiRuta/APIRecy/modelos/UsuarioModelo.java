@@ -24,13 +24,17 @@ public class UsuarioModelo {
     @Column(nullable = false, length = 45)
     private String fotoUsu;
 
+    @Column(nullable = false, length = 2)
+    private int rol;
 
-    public UsuarioModelo(int idUsu, String correoUsu, String contrasenaUsu, String nombreUsu, String fotoUsu) {
+
+    public UsuarioModelo(int idUsu, String correoUsu, String contrasenaUsu, String nombreUsu, String fotoUsu, int rol) {
         this.idUsu = idUsu;
         this.correoUsu = correoUsu;
         this.contrasenaUsu = contrasenaUsu;
         this.nombreUsu = nombreUsu;
         this.fotoUsu = fotoUsu;
+        this.rol= rol;
     }
 
     public UsuarioModelo () {
@@ -75,5 +79,13 @@ public class UsuarioModelo {
 
     public void setFotoUsu(String fotoUsu) {
         this.fotoUsu = fotoUsu;
+    }
+
+    public int getRol() {
+        return rol;
+    }
+
+    public void setRol(int rol) {
+        this.rol = rol;
     }
 }
