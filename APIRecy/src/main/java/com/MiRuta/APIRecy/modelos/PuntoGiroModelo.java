@@ -3,14 +3,12 @@ package com.MiRuta.APIRecy.modelos;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "marcador")
+@Table(name = "puntosGiro")
 public class PuntoGiroModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, length = 3)
-    private int idMarcador;
-    @Column(nullable = false,length = 45)
-    private String nombreMarcador;
+    private int idPuntoGiro;
     @Column(nullable = false, length = 20)
     private float latitud;
     @Column(nullable = false, length = 20)
@@ -20,42 +18,32 @@ public class PuntoGiroModelo {
     public PuntoGiroModelo() {
     }
 
-    public PuntoGiroModelo(int idMarcador, String nombreMarcador, int latitud, int longitud) {
-        this.idMarcador = idMarcador;
-        this.nombreMarcador = nombreMarcador;
-        latitud = latitud;
+    public PuntoGiroModelo(int idMarcador, int latitud, int longitud) {
+        this.idPuntoGiro = idMarcador;
+        this.latitud = latitud;
         this.longitud = longitud;
     }
 
     //Getters
-    public int getIdMarcador() {
-        return idMarcador;
+    public int getIdPuntoGiro() {
+        return idPuntoGiro;
     }
-
-    public String getNombreMarcador() {
-        return nombreMarcador;
-    }
-
     public float getLatitud() {
         return latitud;
     }
-
     public float getLongitud() {
         return longitud;
     }
 
     //Setters
 
-    public void setIdMarcador(int idMarcador) {
-        this.idMarcador = idMarcador;
+
+    public void setIdPuntoGiro(int idPuntoGiro) {
+        this.idPuntoGiro = idPuntoGiro;
     }
 
-    public void setNombreMarcador(String nombreMarcador) {
-        this.nombreMarcador = nombreMarcador;
-    }
-
-    public void setLatitud(int latitud) {
-        latitud = latitud;
+    public void setLatitud(float latitud) {
+        this.latitud = latitud;
     }
 
     public void setLongitud(int longitud) {
