@@ -7,10 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "bus")
-public class
-
-
-BusModelo {
+public class BusModelo {
 
     @Id
     @Column(unique = true, length = 10)

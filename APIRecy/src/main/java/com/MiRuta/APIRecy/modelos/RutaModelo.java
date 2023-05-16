@@ -30,26 +30,18 @@ public class RutaModelo {
     @Temporal(TemporalType.TIME)
     private Time horaFinal;
 
-    @Column(nullable = false)
-    private String marcadorRuta;
-
-    @Column(nullable = false, length = 10)
-    private String diasDisponibles;
-
 
 
     //Constructores
     public RutaModelo() {
     }
 
-    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal, String marcadorRuta, String diasDisponibles) {
+    public RutaModelo(int idRuta, String lugarInicio, String lugarFinal, Time horaInicio, Time horaFinal) {
         this.idRuta = idRuta;
         this.lugarInicio = lugarInicio;
         this.lugarFinal = lugarFinal;
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
-        this.marcadorRuta = marcadorRuta;
-        this.diasDisponibles = diasDisponibles;
     }
 
 
@@ -75,15 +67,6 @@ public class RutaModelo {
         return horaFinal;
     }
 
-    public String getMarcadorRuta() {
-        return marcadorRuta;
-    }
-
-    public String getDiasDisponibles() {
-        return diasDisponibles;
-    }
-
-
 
     //Setters
     public void setIdRuta(int idRuta) {
@@ -105,13 +88,4 @@ public class RutaModelo {
     public void setHoraFinal(Time horaFinal) {
         this.horaFinal = horaFinal;
     }
-
-    public void setMarcadorRuta(String marcadorRuta) {
-        this.marcadorRuta = marcadorRuta;
-    }
-
-    public void setDiasDisponibles(String diasDisponibles) {
-        this.diasDisponibles = diasDisponibles;
-    }
-
 }

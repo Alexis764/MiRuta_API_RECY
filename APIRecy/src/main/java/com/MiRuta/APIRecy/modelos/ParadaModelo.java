@@ -12,7 +12,7 @@ public class ParadaModelo {
     @Column(unique = true, length = 3)
     private int idParadas;
 
-    @Column(nullable = false, length = 45)
+    @Column(nullable = false, length = 70)
     private String nombrePara;
 
     @Column(nullable = false, length = 200)

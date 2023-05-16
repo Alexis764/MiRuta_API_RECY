@@ -28,9 +28,10 @@ public class UsuarioModelo {
     private int rol;
 
     //Constructor
+
+
     public UsuarioModelo() {
     }
-
     public UsuarioModelo(int idUsu, String correoUsu, String contrasenaUsu, String nombreUsu, String fotoUsu, int rol) {
         this.idUsu = idUsu;
         this.correoUsu = correoUsu;
