@@ -20,10 +20,12 @@ public class ParadaControlador {
 
 
 
+    /*
     //Metodo listar todas las paradas
     @GetMapping("/listar")
     public List<Map<String, Object>> listarParadasCon(){
         return paradaServicio.listarParadas();
     }
+     */
 
 }

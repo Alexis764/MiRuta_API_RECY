@@ -4,10 +4,36 @@ import com.MiRuta.APIRecy.interfaces.UsuarioInterface;
 import com.MiRuta.APIRecy.modelos.UsuarioModelo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
 public class UsuarioServicio implements UsuarioInterface {
+
+    UsuarioInterface repository;
+
+    public UsuarioServicio(UsuarioInterface repository) {
+        this.repository = repository;
+    }
+
+    public ArrayList<UsuarioModelo> Listar(){
+        return (ArrayList<UsuarioModelo>) repository.findAll();
+    }
+
+    public String AgregarUsuario(UsuarioModelo usuario){
+        repository.save(usuario);
+        return "Se agrego Usuario";
+    }
+
+    public String EliminarUsuario(int idUsu) {
+        String mensaje = "Error al Eliminar";
+        if (repository.existsById(idUsu)) {
+            repository.deleteById(idUsu);
+            mensaje = "Se elimino correctamente";
+        }
+        return mensaje;
+    }
+
 
     @Override
     public <S extends UsuarioModelo> S save(S entity) {

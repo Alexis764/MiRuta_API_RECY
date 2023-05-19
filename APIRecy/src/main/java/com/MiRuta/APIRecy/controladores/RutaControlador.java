@@ -21,10 +21,13 @@ public class RutaControlador {
 
 
 
+    /*
     //Metodo listar todas las rutas
     @GetMapping("/listar/{correo}")
     public List<Map<String, Object>> listarRutasCon(@PathVariable("correo") String correoUsuario) {
         return rutaServicio.listarRutas(correoUsuario);
     }
+
+     */
 
 }
