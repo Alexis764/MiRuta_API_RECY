@@ -1,30 +1,32 @@
-package com.MiRuta.APIRecy.servicios;
+package com.MiRuta.APIRecy.modelosDAO;
 
 import com.MiRuta.APIRecy.interfaces.ParadaInterface;
-import com.MiRuta.APIRecy.modelos.ParadaModelo;
-import com.MiRuta.APIRecy.modelosDAO.ParadaDao;
 
+import com.MiRuta.APIRecy.modelos.ParadaModelo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@Service
-public class ParadaServicio implements ParadaInterface {
+@Repository
+public class ParadaDao implements ParadaInterface {
 
-    //Objeto DAO de parada
+    //Variable para realizar la consulta a la base de datos
     @Autowired
-    ParadaDao paradaDao;
+    JdbcTemplate template;
 
     /*
     //Metodo listar todas las paradas
     @Override
     public List<Map<String, Object>> listarParadas() {
-        return paradaDao.listarParadas();
+        List<Map<String, Object>> paradaList = template.queryForList("SELECT * FROM paradas");
+        return paradaList;
     }
-     */
+    */
+
     @Override
     public <S extends ParadaModelo> S save(S entity) {
         return null;

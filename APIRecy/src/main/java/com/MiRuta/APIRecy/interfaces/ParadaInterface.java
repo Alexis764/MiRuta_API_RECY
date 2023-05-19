@@ -1,11 +1,13 @@
 package com.MiRuta.APIRecy.interfaces;
 
-import java.util.List;
-import java.util.Map;
+import com.MiRuta.APIRecy.modelos.ParadaModelo;
+import org.hibernate.mapping.Map;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ParadaInterface {
+public interface ParadaInterface extends CrudRepository<ParadaModelo,Integer> {
 
+    /*
     //Metodo listar todas las paradas
     public List<Map<String, Object>> listarParadas();
-
+    */
 }
