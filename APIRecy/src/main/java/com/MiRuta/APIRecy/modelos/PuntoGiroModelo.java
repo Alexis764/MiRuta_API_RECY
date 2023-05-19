@@ -1,9 +1,17 @@
 package com.MiRuta.APIRecy.modelos;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "puntosGiro")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PuntoGiroModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,40 +21,4 @@ public class PuntoGiroModelo {
     private float latitud;
     @Column(nullable = false, length = 20)
     private float longitud;
-
-    //Contructores
-    public PuntoGiroModelo() {
-    }
-
-    public PuntoGiroModelo(int idMarcador, int latitud, int longitud) {
-        this.idPuntoGiro = idMarcador;
-        this.latitud = latitud;
-        this.longitud = longitud;
-    }
-
-    //Getters
-    public int getIdPuntoGiro() {
-        return idPuntoGiro;
-    }
-    public float getLatitud() {
-        return latitud;
-    }
-    public float getLongitud() {
-        return longitud;
-    }
-
-    //Setters
-
-
-    public void setIdPuntoGiro(int idPuntoGiro) {
-        this.idPuntoGiro = idPuntoGiro;
-    }
-
-    public void setLatitud(float latitud) {
-        this.latitud = latitud;
-    }
-
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
-    }
 }

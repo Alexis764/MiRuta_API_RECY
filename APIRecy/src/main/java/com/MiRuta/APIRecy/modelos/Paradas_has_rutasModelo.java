@@ -2,9 +2,17 @@ package com.MiRuta.APIRecy.modelos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Paradas_has_Rutas")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Paradas_has_rutasModelo {
 
     @Id
@@ -18,29 +26,4 @@ public class Paradas_has_rutasModelo {
     @JsonIgnore
     private RutaModelo idRuta;
 
-
-    public Paradas_has_rutasModelo(ParadaModelo idParadas, RutaModelo idRuta) {
-        this.idParadas = idParadas;
-        this.idRuta = idRuta;
-    }
-
-    public Paradas_has_rutasModelo  () {
-
-    }
-
-    public ParadaModelo getIdParadas() {
-        return idParadas;
-    }
-
-    public void setIdParadas(ParadaModelo idParadas) {
-        this.idParadas = idParadas;
-    }
-
-    public RutaModelo getIdRuta() {
-        return idRuta;
-    }
-
-    public void setIdRuta(RutaModelo idRuta) {
-        this.idRuta = idRuta;
-    }
 }

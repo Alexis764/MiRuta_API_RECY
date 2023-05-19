@@ -2,9 +2,17 @@ package com.MiRuta.APIRecy.modelos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "puntoGiro_has_Ruta")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class puntoGiro_has_RutasModelo {
 
     @Id

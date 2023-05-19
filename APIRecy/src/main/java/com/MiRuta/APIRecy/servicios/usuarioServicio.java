@@ -15,6 +15,6 @@ public class usuarioServicio implements usuarioInterface{
     @Override
     public List<Map<String, Object>> listarRutas(String correoUsuario) {
         return rutaDAO.listarRutas(correoUsuario);
+        }
     }*/
-}
 

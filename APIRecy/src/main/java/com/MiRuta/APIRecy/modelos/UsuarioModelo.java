@@ -1,10 +1,18 @@
 package com.MiRuta.APIRecy.modelos;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "usuario")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UsuarioModelo {
 
     @Id
@@ -26,66 +34,4 @@ public class UsuarioModelo {
 
     @Column(nullable = false, length = 2)
     private int rol;
-
-
-    public UsuarioModelo(int idUsu, String correoUsu, String contrasenaUsu, String nombreUsu, String fotoUsu, int rol) {
-        this.idUsu = idUsu;
-        this.correoUsu = correoUsu;
-        this.contrasenaUsu = contrasenaUsu;
-        this.nombreUsu = nombreUsu;
-        this.fotoUsu = fotoUsu;
-        this.rol= rol;
-    }
-
-    public UsuarioModelo () {
-
-    }
-
-    public int getIdUsu() {
-        return idUsu;
-    }
-
-    public void setIdUsu(int idUsu) {
-        this.idUsu = idUsu;
-    }
-
-    public String getCorreoUsu() {
-        return correoUsu;
-    }
-
-    public void setCorreoUsu(String correoUsu) {
-        this.correoUsu = correoUsu;
-    }
-
-    public String getContrasenaUsu() {
-        return contrasenaUsu;
-    }
-
-    public void setContrasenaUsu(String contrasenaUsu) {
-        this.contrasenaUsu = contrasenaUsu;
-    }
-
-    public String getNombreUsu() {
-        return nombreUsu;
-    }
-
-    public void setNombreUsu(String nombreUsu) {
-        this.nombreUsu = nombreUsu;
-    }
-
-    public String getFotoUsu() {
-        return fotoUsu;
-    }
-
-    public void setFotoUsu(String fotoUsu) {
-        this.fotoUsu = fotoUsu;
-    }
-
-    public int getRol() {
-        return rol;
-    }
-
-    public void setRol(int rol) {
-        this.rol = rol;
-    }
 }
