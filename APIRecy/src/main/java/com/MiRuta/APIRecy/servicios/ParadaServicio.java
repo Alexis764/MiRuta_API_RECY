@@ -1,14 +1,12 @@
 package com.MiRuta.APIRecy.servicios;
 
+
 import com.MiRuta.APIRecy.interfaces.ParadaInterface;
 import com.MiRuta.APIRecy.modelos.ParadaModelo;
-import com.MiRuta.APIRecy.modelosDAO.ParadaDao;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -16,15 +14,26 @@ public class ParadaServicio implements ParadaInterface {
 
     //Objeto DAO de parada
     @Autowired
-    ParadaDao paradaDao;
+    ParadaInterface repository;
 
-    /*
-    //Metodo listar todas las paradas
-    @Override
-    public List<Map<String, Object>> listarParadas() {
-        return paradaDao.listarParadas();
+    public ArrayList<ParadaModelo> ListarParada(){
+        return (ArrayList<ParadaModelo>) repository.findAll();
     }
-     */
+
+    public String AgregarParada(ParadaModelo Parada){
+        repository.save(Parada);
+        return "Se creo una parada exitosamente";
+    }
+
+    public String EliminarParada(int idParadas) {
+        String mensaje = "Error al Eliminar";
+        if (repository.existsById(idParadas)) {
+            repository.deleteById(idParadas);
+            mensaje = "Parada eliminada correctamente";
+        }
+        return mensaje;
+    }
+
     @Override
     public <S extends ParadaModelo> S save(S entity) {
         return null;

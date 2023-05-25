@@ -5,9 +5,4 @@ import org.hibernate.mapping.Map;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ParadaInterface extends CrudRepository<ParadaModelo,Integer> {
-
-    /*
-    //Metodo listar todas las paradas
-    public List<Map<String, Object>> listarParadas();
-    */
 }

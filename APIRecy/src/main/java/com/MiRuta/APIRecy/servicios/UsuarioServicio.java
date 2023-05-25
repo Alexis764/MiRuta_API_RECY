@@ -16,7 +16,7 @@ public class UsuarioServicio implements UsuarioInterface {
         this.repository = repository;
     }
 
-    public ArrayList<UsuarioModelo> Listar(){
+    public ArrayList<UsuarioModelo> ListarServicio(){
         return (ArrayList<UsuarioModelo>) repository.findAll();
     }
 
