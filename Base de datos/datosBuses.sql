@@ -42,13 +42,7 @@ insert into parada (nombre_para,direccion_para,latitud,longitud,img_parada) valu
 
 -- ('','',,''),('','',,''),('','',,''),('','',,''),('','',,''),('','',,''),('','',,''),('','',,'');
 
-insert into puntos_giro (id_punto_giro,latitud, longitud) values
-(1,1),
-(2,1),
-(3,1),
-(4,1),
-(5,1),
-(6,1);
+-- insert into puntos_giro (id_punto_giro,latitud, longitud) values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1);
 
 insert into ruta (lugar_inicio, lugar_final, hora_inicio, hora_final) values 
 ('Las palmas','Montanel','4:20:00','8:50:00'),
@@ -85,12 +79,12 @@ insert into usuario (correo_usu,contrasena_usu,nombre_usu,foto_usu,rol) values
 
 select * from miruta.bus;
 select * from miruta.parada;
-select * from ruta;
+select * from miruta.ruta;
 select * from miruta.usuario;
 SELECT * FROM miruta.usuario_has_rutas;
 
 
 
-USE miruta;
+-- USE miruta;
 -- select * from rutas Left join usuario_has_rutas on (idRuta = Rutas_idRuta); 
-#select * from rutas inner join usuario_has_rutas on (idRuta = Rutas_idRuta) where Usuario_Correo_Usu = "alexis@gmail.com";
+-- select * from rutas inner join usuario_has_rutas on (idRuta = Rutas_idRuta) where Usuario_Correo_Usu = "alexis@gmail.com";

@@ -31,7 +31,76 @@ public class UsuarioModelo {
 
     @Column(nullable = false, length = 45)
     private String fotoUsu;
-
+    
     @Column(nullable = false, length = 2)
     private int rol;
+<<<<<<< HEAD
+=======
+
+    //Constructor
+
+
+    public UsuarioModelo() {
+    }
+    public UsuarioModelo(int idUsu, String correoUsu, String contrasenaUsu, String nombreUsu, String fotoUsu, int rol) {
+        this.idUsu = idUsu;
+        this.correoUsu = correoUsu;
+        this.contrasenaUsu = contrasenaUsu;
+        this.nombreUsu = nombreUsu;
+        this.fotoUsu = fotoUsu;
+        this.rol = rol;
+    }
+
+    //Getter
+
+    public int getIdUsu() {
+        return idUsu;
+    }
+
+    public String getCorreoUsu() {
+        return correoUsu;
+    }
+
+    public String getContrasenaUsu() {
+        return contrasenaUsu;
+    }
+
+    public String getNombreUsu() {
+        return nombreUsu;
+    }
+
+    public String getFotoUsu() {
+        return fotoUsu;
+    }
+
+    public int getRol() {
+        return rol;
+    }
+
+    //Setter
+
+    public void setIdUsu(int idUsu) {
+        this.idUsu = idUsu;
+    }
+
+    public void setCorreoUsu(String correoUsu) {
+        this.correoUsu = correoUsu;
+    }
+
+    public void setContrasenaUsu(String contrasenaUsu) {
+        this.contrasenaUsu = contrasenaUsu;
+    }
+
+    public void setNombreUsu(String nombreUsu) {
+        this.nombreUsu = nombreUsu;
+    }
+
+    public void setFotoUsu(String fotoUsu) {
+        this.fotoUsu = fotoUsu;
+    }
+
+    public void setRol(int rol) {
+        this.rol = rol;
+    }
+>>>>>>> main
 }
