@@ -2,10 +2,35 @@ package com.MiRuta.APIRecy.servicios;
 
 import com.MiRuta.APIRecy.interfaces.BusInterface;
 import com.MiRuta.APIRecy.modelos.BusModelo;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class BusServicio implements BusInterface {
+
+    //Objeto DAO de parada
+    @Autowired
+    BusInterface repository;
+
+    public ArrayList<BusModelo> ListarBus(){
+        return (ArrayList<BusModelo>) repository.findAll();
+    }
+
+    public String AgregarBus(BusModelo Bus){
+        repository.save(Bus);
+        return "Se creo una parada exitosamente";
+    }
+
+    public Boolean EliminarBus(String PlacaBus) {
+        try{
+            repository.existsById(PlacaBus);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
     @Override
     public <S extends BusModelo> S save(S entity) {
         return null;

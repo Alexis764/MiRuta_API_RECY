@@ -25,13 +25,16 @@ public class ParadaServicio implements ParadaInterface {
         return "Se creo una parada exitosamente";
     }
 
-    public String EliminarParada(int idParadas) {
-        String mensaje = "Error al Eliminar";
-        if (repository.existsById(idParadas)) {
-            repository.deleteById(idParadas);
-            mensaje = "Parada eliminada correctamente";
+    public Boolean EliminarParada(int idParadas) {
+        try{
+            repository.existsById(idParadas);
+            return true;
+        }catch (Exception e){
+            return false;
         }
-        return mensaje;
+    }
+    public ArrayList<ParadaModelo> findByrol(Integer prioridad) {
+        return null;
     }
 
     @Override

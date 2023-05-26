@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/Usuario")
 @CrossOrigin(origins = "*", maxAge = 360)
 public class UsuarioControlador {
 
@@ -32,6 +33,8 @@ public class UsuarioControlador {
     public String EliminarUsuario(@PathVariable("id")int idUsu) {
         return servicio.EliminarUsuario(idUsu);
     }
+
+
 
 
 
