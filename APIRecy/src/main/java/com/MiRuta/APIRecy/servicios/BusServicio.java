@@ -3,10 +3,11 @@ package com.MiRuta.APIRecy.servicios;
 import com.MiRuta.APIRecy.interfaces.BusInterface;
 import com.MiRuta.APIRecy.modelos.BusModelo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
-
+@Service
 public class BusServicio implements BusInterface {
 
     //Objeto DAO de parada
