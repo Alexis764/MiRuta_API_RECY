@@ -1,4 +1,5 @@
 package com.MiRuta.APIRecy.modelosDAO;
+/*
 
 import com.MiRuta.APIRecy.interfaces.RutaInterface;
 
@@ -18,17 +19,7 @@ public class RutaDAO implements RutaInterface {
     @Autowired
     JdbcTemplate template;
 
-    /*
-    //Metodo listar todas las rutas
-    @Override
-    public List<Map<String, Object>> listarRutas(String correoUsuario) {
-        String sql = "SELECT r.*, " +
-                "CASE WHEN uhr.Usuario_Correo_Usu IS NULL THEN 'false' ELSE 'true' END AS es_favorita " +
-                "FROM Rutas r LEFT JOIN Usuario_has_Rutas uhr ON r.idRuta = uhr.Rutas_idRuta AND uhr.Usuario_Correo_Usu = ?";
-        List<Map<String, Object>> rutaList = template.queryForList(sql, correoUsuario);
-        return rutaList;
-    }
-    */
+
 
     @Override
     public <S extends RutaModelo> S save(S entity) {
@@ -90,3 +81,4 @@ public class RutaDAO implements RutaInterface {
 
     }
 }
+*/

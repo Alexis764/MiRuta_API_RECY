@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/favoritos")
+@RequestMapping("/Favoritos")
 public class Usuario_has_rutasControlador {
 
     //Objeto para servicio de usuario_has_rutas

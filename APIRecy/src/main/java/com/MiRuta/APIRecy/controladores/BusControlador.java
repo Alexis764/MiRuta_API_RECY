@@ -27,9 +27,8 @@ public class BusControlador {
 
     //@PostMapping("/EditarBus")
 
-
     @DeleteMapping("/EliminarBus/{placa}")
-    public boolean EliminarBus(@PathVariable("placa")String placaBus){
+    public String EliminarBus(@PathVariable("placa")String placaBus){
         return servicio.EliminarBus(placaBus);
     }
 }

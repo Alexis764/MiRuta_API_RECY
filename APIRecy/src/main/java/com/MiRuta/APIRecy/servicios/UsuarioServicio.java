@@ -21,19 +21,19 @@ public class UsuarioServicio implements UsuarioInterface {
     }
 
     public String AgregarUsuario(UsuarioModelo usuario){
+        var respuesta = "{'respuesta' : 'No se pudo eliminar usuario'}";
         repository.save(usuario);
-        return "Se agrego Usuario";
+        return respuesta;
     }
 
-    public String EliminarUsuario(int idUsu) {
-        String mensaje = "Error al Eliminar";
-        if (repository.existsById(idUsu)) {
-            repository.deleteById(idUsu);
-            mensaje = "Se elimino correctamente";
+    public String EliminarUsuario(int correoUsu) {
+        var respuesta = "{'respuesta' : 'No se pudo eliminar usuario'}";
+        if (repository.existsById(correoUsu)) {
+            repository.deleteById(correoUsu);
+            respuesta = "{'respuesta' : 'Eliminado exitosamente'}";
         }
-        return mensaje;
+        return respuesta;
     }
-
 
     @Override
     public <S extends UsuarioModelo> S save(S entity) {

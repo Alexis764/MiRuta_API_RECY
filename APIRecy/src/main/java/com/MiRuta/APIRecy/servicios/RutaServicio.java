@@ -1,14 +1,12 @@
 package com.MiRuta.APIRecy.servicios;
 
+
 import com.MiRuta.APIRecy.interfaces.RutaInterface;
 import com.MiRuta.APIRecy.modelos.RutaModelo;
-import com.MiRuta.APIRecy.modelosDAO.RutaDAO;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -17,15 +15,30 @@ public class RutaServicio implements RutaInterface {
 
     //Objeto DAO de ruta
     @Autowired
-    RutaDAO rutaDAO;
+    RutaInterface repository;
+
+    public ArrayList<RutaModelo> ListarRuta(){
+        return (ArrayList<RutaModelo>) repository.findAll();
+    }
+
+    public String AgregarRuta(RutaModelo ruta){
+        var respuesta = "{'respuesta':'agregado correctamente'}";
+        repository.save(ruta);
+        return respuesta;
+    }
+
+
 
     /*
-    //Metodo listar todas las rutas
-    @Override
-    public List<Map<String, Object>> listarRutas(String correoUsuario) {
-        return rutaDAO.listarRutas(correoUsuario);
+    public Boolean EliminarBus(String PlacaBus) {
+        var respuesta = "{'respuesta':'No se elimino'}";
+        if(repository.existsById(PlacaBus)){
+            repository.existsById(PlacaBus);
+            return respuesta = "{'respuesta':'eliminado correctamente'}";
+        }
     }
     */
+
 
     @Override
     public <S extends RutaModelo> S save(S entity) {

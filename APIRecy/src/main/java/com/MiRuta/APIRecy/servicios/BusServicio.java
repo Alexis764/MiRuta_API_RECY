@@ -19,17 +19,18 @@ public class BusServicio implements BusInterface {
     }
 
     public String AgregarBus(BusModelo Bus){
+        var respuesta = "{'respuesta':'agregado correctamente'}";
         repository.save(Bus);
-        return "Se creo una parada exitosamente";
+        return respuesta;
     }
 
-    public Boolean EliminarBus(String PlacaBus) {
-        try{
-            repository.existsById(PlacaBus);
-            return true;
-        }catch (Exception e){
-            return false;
+    public String EliminarBus(String PlacaBus) {
+        var respuesta = "{'respuesta' : 'No se pudo eliminar usuario'}";
+        if (repository.existsById(PlacaBus)){
+            repository.deleteById(PlacaBus);
+            return respuesta = "{'respuesta':'Eliminado correctamente'}";
         }
+        return respuesta;
     }
 
     @Override

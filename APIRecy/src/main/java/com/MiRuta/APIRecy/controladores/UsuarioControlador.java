@@ -29,9 +29,9 @@ public class UsuarioControlador {
         return servicio.AgregarUsuario(usuario);
     }
 
-    @DeleteMapping("/EliminarUsuario/{id}")
-    public String EliminarUsuario(@PathVariable("id")int idUsu) {
-        return servicio.EliminarUsuario(idUsu);
+    @DeleteMapping("/EliminarUsuario/{correoUsu}")
+    public String EliminarUsuario(@PathVariable("correoUsu")int correoUsu) {
+        return servicio.EliminarUsuario(correoUsu);
     }
 
 

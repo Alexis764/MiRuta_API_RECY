@@ -30,7 +30,7 @@ public class ParadaControlador {
 
 
     @DeleteMapping("/EliminarParada/{id}")
-    public boolean EliminarParada(@PathVariable("id")int idParada){
-        return servicio.EliminarParada(idParada);
+    public String EliminarParada(@PathVariable("id")int idParadas){
+        return servicio.EliminarParada(idParadas);
     }
 }

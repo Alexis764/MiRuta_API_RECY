@@ -21,18 +21,21 @@ public class ParadaServicio implements ParadaInterface {
     }
 
     public String AgregarParada(ParadaModelo Parada){
+        var respuesta = "{'respuesta':'agregado correctamente'}";
         repository.save(Parada);
-        return "Se creo una parada exitosamente";
+        return respuesta;
     }
 
-    public Boolean EliminarParada(int idParadas) {
-        try{
-            repository.existsById(idParadas);
-            return true;
-        }catch (Exception e){
-            return false;
+    public String EliminarParada(int idParadas) {
+        var respuesta = "{'respuesta':'no se pudo eliminar'}";
+        if (repository.existsById(idParadas)) {
+            repository.deleteById(idParadas);
+            respuesta = "{'respuesta':'eliminado correctamente'}";
         }
+        return respuesta;
     }
+
+    //@Override
     public ArrayList<ParadaModelo> findByrol(Integer prioridad) {
         return null;
     }

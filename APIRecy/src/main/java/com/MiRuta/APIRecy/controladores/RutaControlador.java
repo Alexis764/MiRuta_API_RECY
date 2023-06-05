@@ -1,33 +1,39 @@
 package com.MiRuta.APIRecy.controladores;
 
+
+import com.MiRuta.APIRecy.modelos.RutaModelo;
 import com.MiRuta.APIRecy.servicios.RutaServicio;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/ruta")
+@RequestMapping("/Ruta")
 public class RutaControlador {
 
     //Objeto para servicio de ruta
     @Autowired
-    RutaServicio rutaServicio;
+    RutaServicio servicio;
 
+    @GetMapping("/ListarRuta")
+    public ArrayList<RutaModelo> ListarRuta(){
+        return servicio.ListarRuta();
+    }
+
+    @PostMapping("/AgregarRuta")
+    public String AgregarBus(@RequestBody RutaModelo ruta){
+        return servicio.AgregarRuta(ruta);
+    }
+
+    //@PostMapping("/EditarRuta")
 
 
     /*
-    //Metodo listar todas las rutas
-    @GetMapping("/listar/{correo}")
-    public List<Map<String, Object>> listarRutasCon(@PathVariable("correo") String correoUsuario) {
-        return rutaServicio.listarRutas(correoUsuario);
+    @DeleteMapping("/EliminarRuta/{}")
+    public boolean EliminarBus(@PathVariable("placa")String placaBus){
+        return servicio.EliminarRuta();
     }
-
-     */
+    */
 
 }
