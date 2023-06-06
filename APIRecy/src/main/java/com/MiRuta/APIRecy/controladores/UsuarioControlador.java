@@ -30,7 +30,7 @@ public class UsuarioControlador {
     }
 
     @DeleteMapping("/EliminarUsuario/{correoUsu}")
-    public String EliminarUsuario(@PathVariable("correoUsu")int correoUsu) {
+    public String EliminarUsuario(@PathVariable("correoUsu")String correoUsu) {
         return servicio.EliminarUsuario(correoUsu);
     }
 

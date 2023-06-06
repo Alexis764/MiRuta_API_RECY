@@ -22,18 +22,21 @@ public class UsuarioServicio implements UsuarioInterface {
 
     public String AgregarUsuario(UsuarioModelo usuario){
         var respuesta = "{'respuesta' : 'No se pudo eliminar usuario'}";
-        repository.save(usuario);
+        if (!repository.existsById(usuario.getCorreoUsu()))
+            repository.save(usuario);
+            respuesta = "{'respuesta' : 'Se agrego un usuario'}";
         return respuesta;
     }
 
-    public String EliminarUsuario(int correoUsu) {
+    public String EliminarUsuario(String correoUsu) {
         var respuesta = "{'respuesta' : 'No se pudo eliminar usuario'}";
-        if (repository.existsById(correoUsu)) {
+        if (repository.existsById(correoUsu)){
             repository.deleteById(correoUsu);
             respuesta = "{'respuesta' : 'Eliminado exitosamente'}";
         }
         return respuesta;
     }
+
 
     @Override
     public <S extends UsuarioModelo> S save(S entity) {
@@ -46,12 +49,12 @@ public class UsuarioServicio implements UsuarioInterface {
     }
 
     @Override
-    public Optional<UsuarioModelo> findById(Integer integer) {
+    public Optional<UsuarioModelo> findById(String s) {
         return Optional.empty();
     }
 
     @Override
-    public boolean existsById(Integer integer) {
+    public boolean existsById(String s) {
         return false;
     }
 
@@ -61,7 +64,7 @@ public class UsuarioServicio implements UsuarioInterface {
     }
 
     @Override
-    public Iterable<UsuarioModelo> findAllById(Iterable<Integer> integers) {
+    public Iterable<UsuarioModelo> findAllById(Iterable<String> strings) {
         return null;
     }
 
@@ -71,7 +74,7 @@ public class UsuarioServicio implements UsuarioInterface {
     }
 
     @Override
-    public void deleteById(Integer integer) {
+    public void deleteById(String s) {
 
     }
 
@@ -81,7 +84,7 @@ public class UsuarioServicio implements UsuarioInterface {
     }
 
     @Override
-    public void deleteAllById(Iterable<? extends Integer> integers) {
+    public void deleteAllById(Iterable<? extends String> strings) {
 
     }
 
@@ -92,5 +95,6 @@ public class UsuarioServicio implements UsuarioInterface {
 
     @Override
     public void deleteAll() {
+
     }
 }

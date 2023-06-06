@@ -16,11 +16,7 @@ import lombok.Setter;
 public class UsuarioModelo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, length = 3)
-    private int idUsu;
-
-    @Column(nullable = false, length = 45)
+    @Column(unique = true, length = 45)
     private String correoUsu;
 
     @Column(nullable = false, length = 45)

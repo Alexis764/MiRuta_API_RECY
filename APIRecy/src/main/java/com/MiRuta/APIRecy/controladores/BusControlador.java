@@ -4,6 +4,7 @@ package com.MiRuta.APIRecy.controladores;
 import com.MiRuta.APIRecy.modelos.BusModelo;
 import com.MiRuta.APIRecy.servicios.BusServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,7 +26,13 @@ public class BusControlador {
         return servicio.AgregarBus(Bus);
     }
 
-    //@PostMapping("/EditarBus")
+    /*
+    @PostMapping("/buses/{placaBus}")
+    public ResponseEntity<String> modificarBus(@PathVariable String placaBus, @RequestBody String nuevaPlacaBus) {
+        BusServicio.ModificarBus(placaBus, nuevaPlacaBus);
+        return ResponseEntity.ok("Bus modificado correctamente");
+    }
+    */
 
     @DeleteMapping("/EliminarBus/{placa}")
     public String EliminarBus(@PathVariable("placa")String placaBus){

@@ -17,8 +17,6 @@ public class Usuario_has_rutasDAO implements Usuario_has_rutasInterface {
     @Autowired
     JdbcTemplate template;
 
-
-
     //Metodo listar rutas favoritas para un usuario
     @Override
     public List<Map<String, Object>> listarRutasFavoritas(String correoUsuario) {
@@ -28,14 +26,12 @@ public class Usuario_has_rutasDAO implements Usuario_has_rutasInterface {
     }
 
 
-
     //Metodo agregar rutas favoritas para un usuario
     @Override
     public int agregarRutaFavorita(Usuario_has_rutasModelo ruta) {
         String sql = "insert into usuario_has_rutas (Usuario_Correo_Usu, Rutas_idRuta) values (?, ?)";
-        return template.update(sql, ruta.getIdUsu(), ruta.getIdRuta());
+        return template.update(sql, ruta.getCorreoUsu(), ruta.getIdRuta());
     }
-
 
 
     //Metodo eliminar rutas favoritas para un usuario

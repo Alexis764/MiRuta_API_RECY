@@ -22,6 +22,9 @@ public class ParadaServicio implements ParadaInterface {
 
     public String AgregarParada(ParadaModelo Parada){
         var respuesta = "{'respuesta':'agregado correctamente'}";
+        if (!repository.existsById(Parada.getIdParadas())){
+            repository.save(Parada);
+        }
         repository.save(Parada);
         return respuesta;
     }

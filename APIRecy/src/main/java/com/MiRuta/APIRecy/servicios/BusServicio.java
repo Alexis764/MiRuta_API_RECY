@@ -20,7 +20,9 @@ public class BusServicio implements BusInterface {
 
     public String AgregarBus(BusModelo Bus){
         var respuesta = "{'respuesta':'agregado correctamente'}";
-        repository.save(Bus);
+        if (repository.existsById(Bus.getPlacaBus())){
+            repository.save(Bus);
+        }
         return respuesta;
     }
 
@@ -31,6 +33,10 @@ public class BusServicio implements BusInterface {
             return respuesta = "{'respuesta':'Eliminado correctamente'}";
         }
         return respuesta;
+    }
+
+    public static void ModificarBus(String nuevaPlacaBus, String placaBus){
+        return ;
     }
 
     @Override
@@ -91,5 +97,15 @@ public class BusServicio implements BusInterface {
     @Override
     public void deleteAll() {
 
+    }
+
+    @Override
+    public Optional<BusModelo> findById(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<BusModelo> findByPlacaBus(String placaBus) {
+        return Optional.empty();
     }
 }

@@ -18,9 +18,9 @@ public class Usuario_has_rutasModelo {
     //Atributos
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "Usuario_idUsu", referencedColumnName = "idUsu", nullable = false)
+    @JoinColumn(name = "Usuario_correoUsu", referencedColumnName = "correoUsu", nullable = false)
     @JsonIgnore
-    private UsuarioModelo idUsu;
+    private UsuarioModelo correoUsu;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Ruta_idRuta", referencedColumnName = "idRuta", nullable = false)

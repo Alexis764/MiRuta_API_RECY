@@ -27,8 +27,6 @@ public class RutaServicio implements RutaInterface {
         return respuesta;
     }
 
-
-
     /*
     public Boolean EliminarBus(String PlacaBus) {
         var respuesta = "{'respuesta':'No se elimino'}";
@@ -38,7 +36,6 @@ public class RutaServicio implements RutaInterface {
         }
     }
     */
-
 
     @Override
     public <S extends RutaModelo> S save(S entity) {
