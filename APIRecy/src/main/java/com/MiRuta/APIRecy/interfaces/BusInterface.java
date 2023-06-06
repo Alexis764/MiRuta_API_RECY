@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface BusInterface extends CrudRepository<BusModelo,String> {
-    Optional<BusModelo> findById(Long id);
+    //Optional<BusModelo> findById(Long id);
 
-    Optional<BusModelo> findByPlacaBus(String placaBus);
+    //Optional<BusModelo> findByPlacaBus(String placaBus);
 }

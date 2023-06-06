@@ -99,6 +99,7 @@ public class BusServicio implements BusInterface {
 
     }
 
+    /*
     @Override
     public Optional<BusModelo> findById(Long id) {
         return Optional.empty();
@@ -108,4 +109,5 @@ public class BusServicio implements BusInterface {
     public Optional<BusModelo> findByPlacaBus(String placaBus) {
         return Optional.empty();
     }
+    */
 }
