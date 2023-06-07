@@ -27,15 +27,14 @@ public class RutaServicio implements RutaInterface {
         return respuesta;
     }
 
-    /*
-    public Boolean EliminarBus(String PlacaBus) {
-        var respuesta = "{'respuesta':'No se elimino'}";
-        if(repository.existsById(PlacaBus)){
-            repository.existsById(PlacaBus);
-            return respuesta = "{'respuesta':'eliminado correctamente'}";
+    public String EliminarRuta(int idRuta) {
+        var respuesta = "{'respuesta' : 'No se pudo eliminar ruta'}";
+        if (repository.existsById(idRuta)){
+            repository.deleteById(idRuta);
+            respuesta = "{'respuesta' : 'Eliminado exitosamente'}";
         }
+        return respuesta;
     }
-    */
 
     @Override
     public <S extends RutaModelo> S save(S entity) {

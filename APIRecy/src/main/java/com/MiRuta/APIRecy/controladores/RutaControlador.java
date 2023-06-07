@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/Ruta")
+@CrossOrigin(origins = "*", maxAge = 360)
 public class RutaControlador {
 
     //Objeto para servicio de ruta
@@ -26,14 +27,10 @@ public class RutaControlador {
         return servicio.AgregarRuta(ruta);
     }
 
-    //@PostMapping("/EditarRuta")
-
-
-    /*
-    @DeleteMapping("/EliminarRuta/{}")
-    public boolean EliminarBus(@PathVariable("placa")String placaBus){
-        return servicio.EliminarRuta();
+    @DeleteMapping("/EliminarRuta/{id}")
+    public String EliminarRuta(@PathVariable("id") int idRuta){
+        return servicio.EliminarRuta(idRuta);
     }
-    */
+    
 
 }
